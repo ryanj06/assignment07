@@ -9,20 +9,20 @@ stages:
       size: 73240
     - path: scripts/clean.py
       hash: md5
-      md5: e1d24a8d3484ea5d0b454a8c101d87fb
-      size: 526
+      md5: 63e2136987b3575803db0918ceadd546
+      size: 595
     outs:
     - path: data/clean/events.csv
       hash: md5
-      md5: 56cf9de748dabcd79878ba66fade33e6
-      size: 7803
+      md5: bd71a19938a770182478f506c8f91df6
+      size: 12113
   transform:
     cmd: uv run python scripts/transform.py
     deps:
     - path: data/clean/events.csv
       hash: md5
-      md5: 56cf9de748dabcd79878ba66fade33e6
-      size: 7803
+      md5: bd71a19938a770182478f506c8f91df6
+      size: 12113
     - path: scripts/transform.py
       hash: md5
       md5: 2f03bf9c1beae418ed978039b290dd1d
@@ -30,15 +30,15 @@ stages:
     outs:
     - path: data/transformed/events.csv
       hash: md5
-      md5: 4b74a8c1107d29e6885ad671a4b2374c
-      size: 10052
+      md5: 0d10071415cf01e07ac3531d90f964e4
+      size: 15814
   features:
     cmd: uv run python scripts/features.py
     deps:
     - path: data/transformed/events.csv
       hash: md5
-      md5: 4b74a8c1107d29e6885ad671a4b2374c
-      size: 10052
+      md5: 0d10071415cf01e07ac3531d90f964e4
+      size: 15814
     - path: scripts/features.py
       hash: md5
       md5: fff3ab0f6d3eba465de1c319ae39fba3
@@ -46,5 +46,5 @@ stages:
     outs:
     - path: data/features/events.csv
       hash: md5
-      md5: a214327a32d481bd38cf08875c0445aa
-      size: 14741
+      md5: a323d186fd6c3b2fba3ec0b331e7c11f
+      size: 23399
